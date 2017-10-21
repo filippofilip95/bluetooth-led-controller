@@ -1,0 +1,5 @@
+rootProject.name = 'arduinoLedRgb'
+include ':react-native-bluetooth-serial'
+project(':react-native-bluetooth-serial').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-bluetooth-serial/android')
+
+include ':app'
