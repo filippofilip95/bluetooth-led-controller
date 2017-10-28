@@ -251,6 +251,8 @@ export default class App extends React.Component {
                             width: 40,
                             borderRadius: 20,
                             backgroundColor: this.state.selectedColor,
+                            borderWidth: 0.5,
+                            borderColor: Constants.BORDER,
                           }}
                         />}
                     </View>}

@@ -1,6 +1,16 @@
 {
-	"name": "arduinoLedRgb",
-	"version": "0.0.1",
+	"name": "arduino-bluetooth-led-controller",
+	"description": "Mobile app which controls Rgb diode with bluetooth powered by Arduino.",
+	"version": "0.1.0",
+	"author": "Filip Papranec",
+	"keywords": [
+		"react-native",
+		"react-native-app",
+		"android",
+		"ios",
+		"arduino",
+		"arduino-bluetooth-led-controller",
+	],
 	"private": true,
 	"scripts": {
 		"start": "node node_modules/react-native/local-cli/cli.js start",
