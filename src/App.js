@@ -148,6 +148,9 @@ export default class App extends React.Component {
   sendStringToDevice = async data => {
     try {
       await BluetoothSerial.write(data)
+      this.setState({
+        selectedColor: null,
+      })
     } catch (e) {
       console.log(e)
     }
@@ -156,13 +159,12 @@ export default class App extends React.Component {
   handleColorChange = color => {
     const hexColor = fromHsv(color)
     this.setState({ selectedColor: hexColor })
-    this.setColor()
+    this.setColor(hexColor)
   }
 
-  setColor = async () => {
-    const { selectedColor } = this.state
+  setColor = async color => {
     try {
-      await BluetoothSerial.write(convertHexToRgbString(selectedColor))
+      await BluetoothSerial.write(convertHexToRgbString(color))
     } catch (e) {
       console.log(e)
     }
@@ -239,6 +241,18 @@ export default class App extends React.Component {
                       >
                         Disconnect
                       </Text>
+                      {!!this.state.selectedColor &&
+                        <View
+                          style={{
+                            position: 'absolute',
+                            top: 15,
+                            right: 15,
+                            height: 40,
+                            width: 40,
+                            borderRadius: 20,
+                            backgroundColor: this.state.selectedColor,
+                          }}
+                        />}
                     </View>}
                 </View>}
             {!!this.state.connectedDevice &&
