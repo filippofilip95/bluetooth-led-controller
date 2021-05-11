@@ -1,4 +1,4 @@
-## Arduino bluettoth led rgb
+## Arduino bluetooth led rgb
 Arduino RGB controller app with React Native
 
 ## Archived
